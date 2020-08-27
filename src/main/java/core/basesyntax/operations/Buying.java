@@ -19,7 +19,7 @@ public class Buying implements Operable {
             }
         }
         if (orderPackQuantity > 0) {
-            throw new NoRequiredQuantityOfFruits("You want to buy more than we have;(");
+            throw new NoRequiredQuantityOfFruits("Insufficient amount of fruit;(");
         }
         return totalPacks;
     }
@@ -27,10 +27,5 @@ public class Buying implements Operable {
     private int reduced(FruitPack currentPack, FruitPack orderPack) {
         return currentPack.getQuantity() > orderPack.getQuantity()
                 ? currentPack.getQuantity() - orderPack.getQuantity() : 0;
-    }
-
-    private boolean checkMatching(FruitPack currentPack, FruitPack orderPack) {
-        return currentPack.getName().equals(orderPack.getName())
-                && currentPack.getExpirationDate().isAfter(orderPack.getExpirationDate());
     }
 }

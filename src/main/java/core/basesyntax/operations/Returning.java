@@ -25,9 +25,4 @@ public class Returning implements Operable {
         }
         return totalPacks;
     }
-
-    private boolean checkMatching(FruitPack currentPack, FruitPack orderPack) {
-        return currentPack.getName().equals(orderPack.getName())
-                && currentPack.getExpirationDate().isEqual(orderPack.getExpirationDate());
-    }
 }

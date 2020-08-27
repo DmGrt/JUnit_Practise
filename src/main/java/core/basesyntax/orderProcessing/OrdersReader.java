@@ -28,7 +28,7 @@ public class OrdersReader {
                 orders.add(new Order(fruitPack, line[0]));
             }
         } catch (IOException | CsvValidationException e) {
-            System.out.println(e.getMessage());
+            throw new RuntimeException(e.getMessage(), e);
         }
         return orders;
     }
